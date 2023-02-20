@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
+import { FavIndicator } from "./FavIndicator";
 import Job from "./Job";
 
 const MainSearch = () => {
@@ -32,8 +33,12 @@ const MainSearch = () => {
   return (
     <Container>
       <Row>
-        <Col xs={10} className="mx-auto my-3">
+        <Col
+          xs={10}
+          className="mx-auto my-3 d-flex align-items-center justify-content-between "
+        >
           <h1>Remote Jobs Search</h1>
+          <FavIndicator />
         </Col>
         <Col xs={10} className="mx-auto">
           <Form onSubmit={handleSubmit}>

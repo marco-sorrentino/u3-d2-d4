@@ -3,13 +3,31 @@
 
 // si setta uno stato iniziale
 const initialState = {
-  cart: {
+  favourites: {
     content: [],
   },
 };
 
 const mainReducer = (state = initialState, action) => {
   switch (action.type) {
+    case "ADD_TO_FAVOURITE":
+      return {
+        ...state,
+        favourites: {
+          ...state.favourites,
+          content: [...state.favourites.content, action.payload],
+        },
+      };
+    case "REMOVE_FROM_FAV":
+      return {
+        ...state,
+        favourites: {
+          ...state.favourites,
+          content: state.favourites.content.filter(
+            (el) => el !== action.payload
+          ),
+        },
+      };
     default:
       return state;
   }
