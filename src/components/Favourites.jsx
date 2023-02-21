@@ -7,9 +7,10 @@ import {
   Button,
 } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import { removeFromFavAction } from "../redux/actions";
 
 const Favourites = (data) => {
-  const favList = useSelector((state) => state.favourites.content);
+  const favList = useSelector((state) => state.favourite.content);
   const dispatch = useDispatch();
 
   return (
@@ -22,12 +23,7 @@ const Favourites = (data) => {
                 <ListGroupItem key={i}>
                   <p>{el}</p>
                   <Button
-                    onClick={() =>
-                      dispatch({
-                        type: "REMOVE_FROM_FAV",
-                        payload: el,
-                      })
-                    }
+                    onClick={() => dispatch(removeFromFavAction(el))}
                     variant="danger"
                   >
                     Remove

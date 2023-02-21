@@ -1,5 +1,7 @@
-// qui si definisce la nostra funziona reducer
+/* // qui si definisce la nostra funziona reducer
 // il reducer prende lo stato corrente dell'app, prende anche l'azione che gli arriva dopo un dispatch
+
+import { ADD_TO_FAVOURITE, REMOVE_FROM_FAV } from "../actions";
 
 // si setta uno stato iniziale
 const initialState = {
@@ -10,7 +12,7 @@ const initialState = {
 
 const mainReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "ADD_TO_FAVOURITE":
+    case ADD_TO_FAVOURITE:
       return {
         ...state,
         favourites: {
@@ -18,7 +20,7 @@ const mainReducer = (state = initialState, action) => {
           content: [...state.favourites.content, action.payload],
         },
       };
-    case "REMOVE_FROM_FAV":
+    case REMOVE_FROM_FAV:
       return {
         ...state,
         favourites: {
@@ -33,4 +35,4 @@ const mainReducer = (state = initialState, action) => {
   }
 };
 
-export default mainReducer;
+export default mainReducer; */
